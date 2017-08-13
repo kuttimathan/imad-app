@@ -10,7 +10,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/contact', function (req, res) {
-  res.send("Contact Information Requested");
+  res.sendFile(path.join(__dirname, 'ui', 'contact.html'));
 });
 
 app.get('/products', function (req, res) {
