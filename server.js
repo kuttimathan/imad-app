@@ -14,7 +14,7 @@ app.get('/contact', function (req, res) {
 });
 
 app.get('/products', function (req, res) {
-  res.send("Products Information Requested");
+  res.sendFile(path.join(__dirname, 'ui', 'products.html'));
 });
 
 app.get('/AboutUs', function (req, res) {
@@ -33,6 +33,7 @@ app.get('/ui/madi.png', function (req, res) {
 
 // Do not change port, otherwise your app won't run on IMAD servers
 // Use 8080 only for local development if you already have apache running on 80
+//  res.send("Products Information Requested"); to send a text response rather than a file
 
 var port = 80;
 app.listen(port, function () {
