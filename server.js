@@ -81,11 +81,12 @@ app.get('/counter', function (req, res) {
 });
 
 var names = [];
-app.get('/submit-name/name', function (req, res) {
+app.get('/submit-name/:name', function (req, res) {
     var name = req.params.name;
     name.push(name);
-    res.send(names);
-    res.send(counter.toString());
+    //JSON Javascript Object Notation - converting js scripts to string
+    
+    res.send(JSON.stringify(names));
 });
 
 app.get('/', function (req, res) {
