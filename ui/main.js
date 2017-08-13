@@ -12,7 +12,7 @@ function moveRight(){
 img.onclick = function(){
     var interval = setInterval(moveRight, 50);
     //img.style.marginRight='200px'; One time move
-}   
+};   
 //alert('Hi There!');
 //Button
 var counter = 0;
@@ -24,8 +24,8 @@ button.onclick = function () {
     request.onreadystatechange = function(){
         if(request.readyState == XMLHttpRequest.DONE) {
             if(request.status == 200) {
-                var counter = request.responseText
-                var span = document.getElementById('count')
+                var counter = request.responseText;
+                var span = document.getElementById('count');
                 span.innerHTML = counter.toString();
             }
         }
@@ -33,19 +33,18 @@ button.onclick = function () {
     // Make request
     request.open('Get', 'http://kuttimathan.imad.hasura-app.io/counter', true);
     request.send(null);
-}
+};
 // Submit name
-var nameInput = document.getElementId('name';
-var name = nameInput.value);
-var submit = document.getElementId('submit');
-submit.onclick = function{) {
- // Make a request to the server and send the name
- var names = ['name1', 'name2', 'name3', 'name4'];
- var list = ''.
- for(var i = 0; i < names.length; i++) {
-     list += '<li>'+ names [i] + </li>;
- }
- var ul = document.getElementById('namelist');
- ul.innerhtml = li;
-}
-}
+var nameInput = document.getElementById('name');
+var name = nameInput.value;
+var submit = document.getElementById('submit');
+submit.onclick = function() {
+     // Make a request to the server and send the name
+     var names = ['name1', 'name2', 'name3', 'name4'];
+     var list = '';
+     for(var i=0; i<names.length; i++) {
+         list += '<li>'+ names[i] + '</li>';
+     }
+     var ul = document.getElementById('namelist');
+     ul.innerHTML = list;
+};
