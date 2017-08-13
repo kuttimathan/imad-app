@@ -32,5 +32,5 @@ button.onclick = function () {
     }
     // Make request
     request.open('Get', 'http://kuttimathan.imad.hasura-app.io/counter', true);
-    request.send;
+    request.send(null);
 }
