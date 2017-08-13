@@ -20,8 +20,13 @@ var button = document.getElementById('counter')
 button.onclick = function () {
     // Make a request to counter end-point
     // Capture the response and store it in a variable
-    // Render the variable in the correct span
-    counter = counter + 1;
-    var span = document.getElementById('count')
-    span.innerHTML = counter.toString();
+    request.onreadystatechange = function(){
+        if(request.readyState == XMLHTTPRequest.DONE) {
+            if(request.status == 200) {
+                var counter = request.responseText
+                var span = document.getElementById('count')
+                span.innerHTML = counter.toString();
+            }
+        }
+    }
 }
