@@ -6,7 +6,7 @@ var app = express();
 app.use(morgan('combined'));
 
 var contents = {
-    contentContact: {
+    contact: {
       title: 'Contact Us',
       heading: 'Address',
       address: 'Chennai, Tamilnadu',
@@ -38,7 +38,6 @@ var contents = {
     }
 }; 
 function createTemplate (data) {
-
     var title = data.title;
     var heading = data.heading;
     var address = data.address;
