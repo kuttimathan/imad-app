@@ -16,7 +16,7 @@ var contents = {
         </p>
       `
     },
-    'Products': {
+    'products': {
       title: 'Products',
       heading: 'Address',
       address: 'Chennai, Tamilnadu',
@@ -26,7 +26,7 @@ var contents = {
         </p>
       `
     },
-    contentAboutus: {
+    aboutus: {
       title: 'About Us',
       heading: 'Address',
       address: 'Chennai, Tamilnadu',
