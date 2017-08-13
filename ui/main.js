@@ -18,7 +18,8 @@ img.onclick = function(){
 var counter = 0;
 var button = document.getElementById('counter')
 button.onclick = function () {
-    // Make a request to counter end-point
+    // Create a request
+    var request = new XMLHTTPRequest();
     // Capture the response and store it in a variable
     request.onreadystatechange = function(){
         if(request.readyState == XMLHTTPRequest.DONE) {
@@ -29,4 +30,7 @@ button.onclick = function () {
             }
         }
     }
+    // Make request
+    request.open('Get', 'http://kuttimathan.imad.hasura-app.io/counter', true);
+    request.send;
 }
