@@ -5,16 +5,38 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var contentContact = {
-  title: 'Contact Us',
-  heading: 'Address',
-  address: 'Chennai, Tamilnadu',
-  content: `
-    <p>
-        Please contact us at codebulls@gmail.com
-    </p>
-  `
-};
+var contents = {
+    contentContact: {
+      title: 'Contact Us',
+      heading: 'Address',
+      address: 'Chennai, Tamilnadu',
+      content: `
+        <p>
+            Please contact us at codebulls@gmail.com
+        </p>
+      `
+    },
+    contentProducts: {
+      title: 'Products',
+      heading: 'Address',
+      address: 'Chennai, Tamilnadu',
+      content: `
+        <p>
+            Please contact us at codebulls@gmail.com
+        </p>
+      `
+    },
+    contentAboutus: {
+      title: 'About Us',
+      heading: 'Address',
+      address: 'Chennai, Tamilnadu',
+      content: `
+        <p>
+            Please contact us at codebulls@gmail.com
+        </p>
+      `
+    }
+}; 
 function createTemplate (data) {
 
     var title = data.title;
@@ -57,18 +79,10 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/contact', function (req, res) {
-  res.send(createTemplate(contentContact));
+app.get('/:contentName', function (req, res) {
+    var contentName = req.params.contentName;
+    res.send(createTemplate(content[contentName]));
 });
-
-app.get('/products', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'products.html'));
-});
-
-app.get('/AboutUs', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'aboutus.html'));
-});
-
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
