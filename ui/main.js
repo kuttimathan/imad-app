@@ -16,7 +16,7 @@ img.onclick = function(){
 //alert('Hi There!');
 //Button
 var counter = 0;
-var element = document.getElementById('counter')
+var button = document.getElementById('counter')
 button.onclick = function () {
     // Make a request to counter end-point
     // Capture the response and store it in a variable
