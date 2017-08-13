@@ -34,3 +34,18 @@ button.onclick = function () {
     request.open('Get', 'http://kuttimathan.imad.hasura-app.io/counter', true);
     request.send(null);
 }
+// Submit name
+var nameInput = document.getElementId('name';
+var name = nameInput.value);
+var submit = document.getElementId('submit');
+submit.onclick = function{) {
+ // Make a request to the server and send the name
+ var names = [name1, name2, name3];
+ var list = ''.
+ for(var = 0; i < names.length; i++) {
+     list += '<li>'+ names [i] + </li>;
+ }
+ var ul = document.getElementById('namelist');
+ ul.innerhtml = li;
+}
+}
