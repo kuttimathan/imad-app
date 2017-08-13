@@ -35,11 +35,11 @@ button.onclick = function () {
     request.send(null);
 };
 // Submit name
-var nameInput = document.getElementById('name');
-var name = nameInput.value;
 var submit = document.getElementById('submit_btn');
 submit.onclick = function() {
         // Create a request
+    var nameInput = document.getElementById('name');
+    var name = nameInput.value;
     var request = new XMLHttpRequest();
     // Capture the response and store it in a variable
     request.onreadystatechange = function(){
