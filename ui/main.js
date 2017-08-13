@@ -4,9 +4,10 @@ var element = document.getElementById('main-text')
 element.innerHTML = 'CodeBulls Inc.'
 //Move the Image
 var img = document.getElementById('main-image')
+var marginLeft = 0;
 function moveRight(){
     marginLeft = marginLeft + 10;
-    img.style.marginRight = marginLeft + 'px';
+    img.style.marginLeft = marginLeft + 'px';
 }
 img.onclick = function(){
     var interval = setInterval(moveRight, 100);
