@@ -40,9 +40,9 @@ var name = nameInput.value);
 var submit = document.getElementId('submit');
 submit.onclick = function{) {
  // Make a request to the server and send the name
- var names = [name1, name2, name3];
+ var names = ['name1', 'name2', 'name3', 'name4'];
  var list = ''.
- for(var = 0; i < names.length; i++) {
+ for(var i = 0; i < names.length; i++) {
      list += '<li>'+ names [i] + </li>;
  }
  var ul = document.getElementById('namelist');
