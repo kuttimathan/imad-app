@@ -15,7 +15,9 @@ body {
 .text-big {
     font-size: 300%;
 }
-
+.text-small {
+    font-size: 50%;
+}
 .bold {
     font-weight: bold;
 }
