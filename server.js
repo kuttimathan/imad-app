@@ -18,7 +18,7 @@ app.get('/products', function (req, res) {
 });
 
 app.get('/AboutUs', function (req, res) {
-  res.send("About Us Information Requested");
+  res.sendFile(path.join(__dirname, 'ui', 'aboutus.html'));
 });
 
 
