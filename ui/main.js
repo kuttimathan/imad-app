@@ -5,5 +5,5 @@ element.innerHTML = 'CodeBulls Inc.'
 //Move the Image
 var img = document.getElementById('main-image')
 img.onclick = function(){
-    img.style.marginLeft="180px";
+    img.style.marginLeft='180px';
 }
