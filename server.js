@@ -15,38 +15,18 @@ var app = express();
 
 app.use(morgan('combined'));
 
-var contents = {
-    'contact': {
-      title: 'Contact Us',
-      heading: 'Address',
-      address: 'Chennai, Tamilnadu',
-      content: `
-        <p>
-            Please contact us at codebulls@gmail.com
-        </p>
-      `
-    },
-    'products': {
-      title: 'Products',
-      heading: 'Products',
-      address: 'Chennai, Tamilnadu',
-      content: `
-        <p>
-            Please contact us at codebulls@gmail.com
-        </p>
-      `
-    },
-    'aboutus': {
-      title: 'About Us',
-      heading: 'About Us',
-      address: 'Chennai, Tamilnadu',
-      content: `
-        <p>
-            Please contact us at codebulls@gmail.com
-        </p>
-      `
-    }
-}; 
+//var contents = {
+//    'contact': {
+//      title: 'Contact Us',
+//      heading: 'Address',
+//      address: 'Chennai, Tamilnadu',
+//      content: `
+//        <p>
+//            Please contact us at codebulls@gmail.com
+//        </p>
+//      `
+//    },
+//}; 
 function createTemplate (data) {
     var title = data.title;
     var heading = data.heading;
