@@ -124,8 +124,8 @@ app.get('/', function (req, res) {
 //});
 
 app.get('/contents/:contentName', function (req, res) {
-    pool.query('SELECT * FROM appdata WHERE title = ' + req.params.contentName , function(err, result) {
-       if(err) {
+    pool.query("SELECT * FROM appdata WHERE title = " + req.params.contentName , function(err, result) {
+       if(err) { 
            res.status(500).send('check' + err.toString());
        } else {
            if (result.rows.length === 0) {
