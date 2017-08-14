@@ -106,7 +106,7 @@ app.get('/test-db', function (req, res) {
 //return response
 pool.query("SELECT * FROM appdata", function (err, result){
     if (err) {
-        res.status(500).send(err.toString());
+        res.status(500).send('Check01' + err.toString());
     } else {
         res.send(JSON.stringify(result.rows));
     }
