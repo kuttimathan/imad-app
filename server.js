@@ -102,8 +102,6 @@ app.get('/submit-name', function (req, res) {
 
 var pool = new Pool(config);
 app.get('/test-db', function (req, res) {
-//make a select request
-//return response
 pool.query("SELECT * FROM appdata", function (err, result){
     if (err) {
         res.status(500).send('Check01' + err.toString());
@@ -124,6 +122,7 @@ app.get('/', function (req, res) {
 //});
 
 app.get('/:contentName', function (req, res) {
+    alert('check: ' + req.params.contentName);
     pool.query("SELECT * FROM appdata WHERE title = '" + req.params.contentName + "'", function(err, result) {
        if(err) { 
            res.status(500).send('check' + err.toString());
