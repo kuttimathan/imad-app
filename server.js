@@ -118,9 +118,25 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/:contentName', function (req, res) {
-    var contentName = req.params.contentName;
-    res.send(createTemplate(contents[contentName]));
+//app.get('/:contentName', function (req, res) {
+//    var co ntentName = req.params.contentName;
+//    res.send(createTemplate(contents[contentName]));
+//});
+
+app.get('/contents/:contentName', function (req, res) {
+    pool.query(`SELECT * FROM app-data WHERE title = '` + req.params.contentName + `'`, function(err, result) {
+       if(err) {
+           res.status(500).send(err.toString());
+       } else {
+           if (result.rows.length === 0) {
+               res.status(404).send("Article not found");
+           } else {
+               var contentData = result.rows[0];
+               res.send(createTemplate(contentData));
+           }
+           
+       }
+    });
 });
 
 app.get('/ui/style.css', function (req, res) {
