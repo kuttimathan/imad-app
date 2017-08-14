@@ -102,7 +102,9 @@ app.get('/', function (req, res) {
 //});
 
 app.get('/contents/:contentName', function (req, res) {
-    pool.query("SELECT * FROM appdata WHERE title = '" + req.params.contentName + "'", function(err, result) {
+    //Use backslash before quotes to avoid sql injection attacks \'
+    //pool.query("SELECT * FROM appdata WHERE title = '" + req.params.contentName + "'", function(err, result) {
+    pool.query("SELECT * FROM appdata WHERE title = $1", [req.params.contentName], function(err, result) {
        if(err) { 
            res.status(500).send(err.toString());
        } else {
