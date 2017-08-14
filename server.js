@@ -122,7 +122,6 @@ app.get('/', function (req, res) {
 //});
 
 app.get('/contents/:contentName', function (req, res) {
-    alert('check: ' + req.params.contentName);
     pool.query("SELECT * FROM appdata WHERE title = '" + req.params.contentName + "'", function(err, result) {
        if(err) { 
            res.status(500).send('check' + err.toString());
