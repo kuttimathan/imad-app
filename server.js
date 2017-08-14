@@ -119,11 +119,11 @@ app.get('/', function (req, res) {
 });
 
 //app.get('/:contentName', function (req, res) {
-//    var co ntentName = req.params.contentName;
+//    var contentName = req.params.contentName;
 //    res.send(createTemplate(contents[contentName]));
 //});
 
-app.get('/contents/:contentName', function (req, res) {
+app.get('/:contentName', function (req, res) {
     pool.query("SELECT * FROM appdata WHERE title = '" + req.params.contentName + "'", function(err, result) {
        if(err) { 
            res.status(500).send('check' + err.toString());
