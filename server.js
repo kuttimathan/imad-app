@@ -108,7 +108,7 @@ pool.query("SELECT * FROM appdata", function (err, result){
     if (err) {
         res.status(500).send('Check01' + err.toString());
     } else {
-        res.send(JSON.stringify(result.rows));
+        res.send(JSON.stringify(result));
     }
 })
 });
