@@ -126,8 +126,7 @@ app.get('/', function (req, res) {
 app.get('/contents/:contentName', function (req, res) {
     pool.query('SELECT * FROM appdata WHERE title = ' + req.params.contentName , function(err, result) {
        if(err) {
-           alert('amhit');
-           res.status(500).send(err.toString());
+           res.status(500).send('check' + err.toString());
        } else {
            if (result.rows.length === 0) {
                res.status(404).send("Data not found");
