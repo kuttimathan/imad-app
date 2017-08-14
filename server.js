@@ -131,7 +131,7 @@ app.get('/contents/:contentName', function (req, res) {
            if (result.rows.length === 0) {
                res.status(404).send("Data not found");
            } else {
-               var contentData = result.rows[0];
+               var contentData = result.rows[1];
                res.send(createTemplate(contentData));
            }
            
