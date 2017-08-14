@@ -108,7 +108,7 @@ pool.query("SELECT * FROM appdata", function (err, result){
     if (err) {
         res.status(500).send('Check01' + err.toString());
     } else {
-        res.send(JSON.stringify(result));
+        res.send(JSON.stringify(result.rows));
     }
 })
 });
@@ -131,7 +131,7 @@ app.get('/contents/:contentName', function (req, res) {
            if (result.rows.length === 0) {
                res.status(404).send("Data not found");
            } else {
-               var contentData = result.rows[1];
+               var contentData = result.rows[0];
                res.send(createTemplate(contentData));
            }
            
